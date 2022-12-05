@@ -1,61 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-.nav {
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: stretch;
-  padding-left: 2em;
-  
-}
-.logo-style {
-  font-size: 2rem;
-  text-decoration: none;
-  
-}
-
-.nav ul {
-  margin: 0;
-  padding-right: 2em;
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-
- 
-}
-
-.nav a {
-  color: inherit;
-  text-decoration: none;
-  font-size: 2em;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding:.25 rem
-}
-.nav li.active {
-  background-color: #555;
-}
-
-
-.nav li:hover {
-  background-color: brown;
-}
-
+// css reset
 
 ///// from slingair
 
+body{
+background-color: black;
 
+
+}
 
   :root {
     --color-cadmium-red: #D80026;
@@ -112,4 +66,7 @@ body {
       content: '';
       content: none;
   }
+
+
+
 `;

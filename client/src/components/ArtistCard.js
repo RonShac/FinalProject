@@ -1,42 +1,64 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+//<Image src={process.env.PUBLIC_URL + "/logo192.png"} /> react logo
+
 const ArtistCard = ({ artist }) => {
   return (
     <li>
-      <Card to={"/artist/" + artist.id}>
-        <h1>{artist.nickname}</h1>
-
-        <Image src={process.env.PUBLIC_URL + artist.image} height="3.4rem" />
-
-        <h2> {artist.country}</h2>
-        <h3>{artist.email}</h3>
-        <h4 className="hover"> view artist </h4>
+      <Card
+        to={"/artists/" + artist.id}
+     
+        bg={process.env.PUBLIC_URL + artist.image}
+      >
+        <H1>{artist.nickname}</H1>
+        <Div>
+          <h2> {artist.country}</h2>
+          <h3>{artist.email}</h3>
+          <h4 className="hover"></h4>
+        </Div>
       </Card>
     </li>
   );
 };
 
-const Image = styled.img`
-  width: 100px;
-  height: 100px;
-  min-width: 200px;
-  max-width: 200px;
+//const Image = styled.img``;
+
+const H1 = styled.h1`
+  color: green;
+  font-style: italic;
+  font-size: 32px; ;
 `;
 
 const Card = styled(Link)`
-  display: inline-grid;
-  flex-direction: row;
-  border: solid;
+  height: 40em;
+  width: 25em;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: ${({ bg }) => `url(${bg}) `};
 
-  margin: 0 0.7 10 0.7;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 20px;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 0 93 0 93;
+  margin: 2rem;
 
   &:hover {
-    background-color: brown;
+    transform: scale(1.2, 1.2);
   }
+`;
+
+const Div = styled.div`
+  font-style: italic;
+  font-size: 32px;
+  color: white;
+  background-color: black;
 `;
 
 export default ArtistCard;

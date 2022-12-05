@@ -2,9 +2,9 @@ const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
 
-const { getProfile } = require("./handlers/profile");
+const { getProfile, getUsers, getTicketsForEmail } = require("./handlers/profile");
 const { getEvents, getEvent } = require("./handlers/events");
-const { purchaseTicket, getTicket, cancelTicket, changeTicket } = require("./handlers/tickets");
+const { purchaseTicket, getTickets, getTicket, cancelTicket, changeTicket } = require("./handlers/tickets");
 const { getArtists, getArtist } = require("./handlers/artists");
 
 const { getVenues, getVenue } = require("./handlers/venues");
@@ -33,21 +33,24 @@ express()
   .use(morgan("tiny"))
 
   .get("/api/me", getProfile)
+  .get("/api/users", getUsers)
 
   // artists
   .get("/api/artists", getArtists)
   .get("/api/artists/:artist", getArtist)
 
   // events
-  .get("/api/event/", getEvents)
-  .get("/api/event/:event", getEvent)
+  .get("/api/events/", getEvents)
+  .get("/api/events/:event", getEvent)
 
   // venues
   //.get("/api/venues/", getVenues)
   //.get("/api/venues/:venue", getVenue)
 
   // ticket endpoint
-  .post("/api/event/:event/book-ticket", purchaseTicket)
+  .post("/api/events/:event/buy", purchaseTicket)
+  .get("/api/tickets", getTickets)
+  .get("/api/tickets/purchased", getTicketsForEmail)
   .get("/api/tickets/:ticket", getTicket)
   //.patch("/api/tickets/:ticket", changeTicket)
   .delete("/api/tickets/:ticket", cancelTicket)

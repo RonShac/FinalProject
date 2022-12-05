@@ -11,6 +11,7 @@ const options = {
   useUnifiedTopology: true,
 };
 
+
 const dbFunction = async (callback) => {
   // creates a new client
   const client = new MongoClient(MONGO_URI, options);
@@ -32,4 +33,4 @@ const dbFunction = async (callback) => {
   return result;
 };
 
-module.export = dbFunction;
+module.exports = dbFunction;
