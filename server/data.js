@@ -157,7 +157,7 @@ const events = [
   },
   {
     id: 4,
-    name: "Dagenstan Rave",
+    name: "Dagestan Rave",
     description:
       "Olivier Primo has the pleasure to host dj Churek at the beach club. Dagestan rave is based on techno music mixed with traditional arab rythmes. Special guest of this event is Khabib Nourmagomedov and his team who will demonstrate spectaculare MMA take downs on the stage.",
     lineup: [

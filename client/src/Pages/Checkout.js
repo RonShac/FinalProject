@@ -77,7 +77,7 @@ const Checkout = () => {
         {user && event && (
           <>
             <H2>
-              Event: {event?.name} - Ticket Type: {ticketType.name ?? type}
+              Event: {event?.name} - Ticket Type: {ticketType?.name ?? type}
             </H2>
             <Form
               handleSubmit={handleSubmit}

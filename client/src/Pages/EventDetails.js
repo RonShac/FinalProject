@@ -80,8 +80,9 @@ const EventDetails = () => {
 const LinkArtist = styled(Link)`
   font-size: 2em;
   color: white;
-  padding-top: 2em;
+  margin-top: 2em;
   cursor: pointer;
+
 
 `;
 
@@ -89,6 +90,7 @@ const List = styled.ul`
   margin-top: 4em;
   display: flex;
   flex-direction: column;
+  
 `;
 
 const Section2 = styled.div`
